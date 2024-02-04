@@ -20,7 +20,6 @@ const { SalesRoutes } = require('./routes/sales.router')
 require('dotenv').config()
 const app = express()
 
-/* server site port */
 const port = process.env.PORT || 5001
 
 app.use(express.json());
