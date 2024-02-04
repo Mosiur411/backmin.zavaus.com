@@ -20,10 +20,9 @@ const { SalesRoutes } = require('./routes/sales.router')
 const { ProductModel } = require('./model/product/product.model')
 require('dotenv').config()
 const app = express()
+
 /* server site port */
 const port = process.env.PORT || 5001
-
-
 
 app.use(express.json());
 app.use(
