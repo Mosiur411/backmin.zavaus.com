@@ -17,7 +17,6 @@ const { brandRoutes } = require('./routes/brand.router')
 const { NotificationModel } = require('./model/notification')
 const { OrderRoutes } = require('./routes/order.router')
 const { SalesRoutes } = require('./routes/sales.router')
-const { ProductModel } = require('./model/product/product.model')
 require('dotenv').config()
 const app = express()
 
