@@ -28,7 +28,7 @@ const port = process.env.PORT || 5001
 app.use(express.json());
 app.use(
   cors({
-    origin: ['https://zavawholesale.com', 'http://localhost:3000', 'https://backmin.zavawholesale.com'],
+    origin: ['http://localhost:3000'],
   })
 );
 
