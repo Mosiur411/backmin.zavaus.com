@@ -132,7 +132,6 @@ const getSingleUserInfo = async (req, res) => {
 }
 
 
-
 /* user update  */
 const updateUser = async (req, res) => {
     try {
@@ -154,6 +153,20 @@ const updateUser = async (req, res) => {
     }
 }
 
+const chnagesEmail = async (req, res) => {
+    try {
+        // NqL5qC8uE3O99NENFnWte2VUPpC2
+        const newEmail = 'mosiurislam2003@gmail.com';
+        const userUid = 'NqL5qC8uE3O99NENFnWte2VUPpC2';
+        const result = await admin.auth().updateUser(userUid, { email: newEmail })
+        return res.status(200).json(result)
+    } catch (err) {
+        const errorMessage = errorMessageFormatter(err)
+        return res.status(500).json(errorMessage)
+    }
+}
+
+
 module.exports = {
     getUserByEmail,
     registerUser,
@@ -163,5 +176,7 @@ module.exports = {
     putUserInfo,
     deleteUserInfo,
     getSingleUserInfo,
-    notificationToken
+    notificationToken,
+    chnagesEmail
 }
+

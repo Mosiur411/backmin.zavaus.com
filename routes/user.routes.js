@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { getUser, updateUser, registerUser, getUserInfo, putUserInfo, deleteUserInfo, getSingleUserInfo } = require('../controller/user.controller')
+const { getUser, updateUser, registerUser, getUserInfo, putUserInfo, deleteUserInfo, getSingleUserInfo, chnagesEmail } = require('../controller/user.controller')
 const { Auth_Rqeuired } = require('../middleware/auth.middleware')
 const { upload } = require('../middleware/files.middleware')
 const userRoutes = Router()
@@ -9,6 +9,7 @@ userRoutes.put('/updateProfile', Auth_Rqeuired, upload.single('image'), updateUs
 
 /* admin user info  */
 userRoutes.get('/userInfo', Auth_Rqeuired, getUserInfo)
+userRoutes.get('/user/email-changes', chnagesEmail)
 userRoutes.put('/userInfo', putUserInfo)// Auth_Rqeuired,
 userRoutes.delete('/userInfo', Auth_Rqeuired, deleteUserInfo)
 userRoutes.get('/userInfo/single', Auth_Rqeuired, getSingleUserInfo)
